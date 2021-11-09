@@ -36,7 +36,7 @@ public class PlayerControls : MonoBehaviour
 
         //clamp players position to inside the play field
         Vector2 clampPos = transform.position;
-        clampPos.x = Mathf.Clamp(clampPos.x, -4.9f, 4.9f);
+        clampPos.x = Mathf.Clamp(clampPos.x, -4.4f, 4.4f);
         clampPos.y = Mathf.Clamp(clampPos.y, -6f,100f);
 
         transform.position = clampPos;
