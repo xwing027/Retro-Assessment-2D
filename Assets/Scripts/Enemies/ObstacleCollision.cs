@@ -20,6 +20,7 @@ public class ObstacleCollision : MonoBehaviour
         //are we touching a bullet?
         if (collision.gameObject.tag == "Bullet")
         {
+            Debug.Log("Bullet touching");
             //destroy bullet, then destroy self
             Destroy(collision.gameObject);
             Destroy(gameObject);

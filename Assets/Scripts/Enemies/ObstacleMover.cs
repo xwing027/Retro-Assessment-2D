@@ -10,11 +10,10 @@ public class ObstacleMover : MonoBehaviour
     {
         //move - so far this handles all obstacles the same way
         transform.Translate(Vector2.up*speed*Time.deltaTime);
+    }
 
-        //destroy themselves eventually
-        if (transform.position.y < -6)
-        {
-            Destroy(gameObject);
-        }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
