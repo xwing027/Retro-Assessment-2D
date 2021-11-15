@@ -17,7 +17,7 @@ public class PointsHandler : MonoBehaviour
         totalPoints += 10;
     }
 
-    public void E1Points()
+    public void Ghost2Points()
     {
         totalPoints += 20;
     }

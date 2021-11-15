@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - Ghost1
+  - Ghost2
+  - PlayerInvun
+  - Powerup1
   layers:
   - Default
   - TransparentFX

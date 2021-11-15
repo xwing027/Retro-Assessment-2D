@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2577325495663418746}
   - component: {fileID: 2577325495663418745}
-  - component: {fileID: 3673610313512066693}
   - component: {fileID: 8952370949187032367}
+  - component: {fileID: 5410393742327967611}
   m_Layer: 3
   m_Name: Holy water
   m_TagString: Bullet
@@ -84,19 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3673610313512066693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2577325495663418744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0073417d31d838409bf39fed990eda5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
 --- !u!70 &8952370949187032367
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -113,3 +100,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &5410393742327967611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2577325495663418744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0073417d31d838409bf39fed990eda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
