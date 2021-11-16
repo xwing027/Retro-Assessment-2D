@@ -13,14 +13,9 @@ public class GhostMover : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, player.transform.position); //getting the distance from the player
         
-        if (distance <= 5)
+        if (distance <= 10)
         {
-            GhostMove();
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
-    }
-
-    void GhostMove()
-    {
-        transform.position = player.transform.position * speed * Time.deltaTime;
     }
 }

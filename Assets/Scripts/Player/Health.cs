@@ -20,7 +20,6 @@ public class Health : MonoBehaviour
 
     public void Update()
     {
-        HealthBar();
         if (isInvun)
         {
             player.tag = "PlayerInvun";
@@ -31,6 +30,8 @@ public class Health : MonoBehaviour
         {
             Destroy(player.gameObject);
         }
+        
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1); //manages health bar fill
     }
 
     #region Invulnerability
@@ -68,9 +69,4 @@ public class Health : MonoBehaviour
         yield return null;
     }
     #endregion
-
-    public void HealthBar()
-    {
-        healthBar.fillAmount = Mathf.Clamp(health/maxHealth,0,1); //manages health bar fill
-    }
 }
