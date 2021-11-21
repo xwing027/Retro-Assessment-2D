@@ -6,7 +6,19 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
-    public CanvasGroup pause;
+    public GameObject pause;
+    public GameObject instructions;
+    public GameObject bg;
+    public Health healthScript;
+
+    private void Start()
+    {
+        Time.timeScale = 0;
+        PlayerControls.playing = false;
+        instructions.SetActive(true);
+        bg.SetActive(true);
+        healthScript = GameObject.Find("Health Manager").GetComponent<Health>();
+    }
 
     public void StartGame()
     {
@@ -28,18 +40,35 @@ public class ButtonManager : MonoBehaviour
 
     public void Pause()
     {
-        if (pause.alpha == 0)
+        if (pause.activeSelf == false)
         {
             Time.timeScale = 0;
-            pause.alpha = 1;
-            pause.interactable = true;
+            pause.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
-            pause.alpha = 0;
-            pause.interactable = false;
+            pause.SetActive(false);
         }
         
+    }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        healthScript.Save();
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Instructions()
+    {
+        Time.timeScale = 1;
+        instructions.SetActive(false);
+        bg.SetActive(false);
+        PlayerControls.playing = true;
     }
 }

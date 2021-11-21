@@ -12,6 +12,21 @@ public class Health : MonoBehaviour
     public GameObject player;
     public SpriteRenderer playerSprite;
 
+    public GameObject levelFail;
+    public GameObject levelBG;
+
+    public void Awake()
+    {
+        if (PlayerPrefs.HasKey("CurrentHealth"))
+        {
+            health = PlayerPrefs.GetFloat("CurrentHealth");
+        }
+        else
+        {
+            Save();
+        }
+    }
+
     private void Start()
     {
         health = maxHealth;
@@ -28,7 +43,9 @@ public class Health : MonoBehaviour
         }
         if (health <=0)
         {
-            Destroy(player.gameObject);
+            player.SetActive(false);
+            levelFail.SetActive(true);
+            levelBG.SetActive(true);
         }
         
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1); //manages health bar fill
@@ -69,4 +86,9 @@ public class Health : MonoBehaviour
         yield return null;
     }
     #endregion
+
+    public void Save()
+    {
+        PlayerPrefs.SetFloat("CurrentHealth", health);
+    }
 }

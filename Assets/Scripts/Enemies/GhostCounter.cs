@@ -5,6 +5,7 @@ using UnityEngine;
 public class GhostCounter : MonoBehaviour
 {
     FearBehaviour fbehav;
+    
 
     private void Start()
     {
@@ -14,11 +15,12 @@ public class GhostCounter : MonoBehaviour
     private void OnBecameVisible()
     {
         fbehav.visibleGhosts++;
-        Debug.Log("adding to ghost count");
+        fbehav.ghosts.Add(gameObject);
     }
 
     private void OnBecameInvisible()
     {
         fbehav.visibleGhosts--;
+        fbehav.ghosts.Remove(gameObject);
     }
 }

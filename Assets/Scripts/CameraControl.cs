@@ -9,7 +9,7 @@ public class CameraControl : MonoBehaviour
 
     void Update()
     {
-        float yTarget = target.position.y; //find the target on the y axis
+        float yTarget = target.position.y+3; //find the target on the y axis
         float yPos = Mathf.Lerp(transform.position.y, yTarget, Time.deltaTime * speed); //use the target's y axis to add a delay to the movement
         transform.position = new Vector3(transform.position.x, yPos, transform.position.z); //move the camera w the target's position
     }
