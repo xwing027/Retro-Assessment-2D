@@ -15,21 +15,9 @@ public class Health : MonoBehaviour
     public GameObject levelFail;
     public GameObject levelBG;
 
-    public void Awake()
-    {
-        if (PlayerPrefs.HasKey("CurrentHealth"))
-        {
-            health = PlayerPrefs.GetFloat("CurrentHealth");
-        }
-        else
-        {
-            Save();
-        }
-    }
-
     private void Start()
     {
-        health = maxHealth;
+        health = maxHealth; //this is why the health resets each level i think lol
         playerSprite = GameObject.Find("Player").GetComponent<SpriteRenderer>();
     }
 
@@ -55,7 +43,6 @@ public class Health : MonoBehaviour
     public void ResetInvun()
     {
         player.tag = "Player";
-        
     }
 
     IEnumerator Flash()
@@ -86,9 +73,4 @@ public class Health : MonoBehaviour
         yield return null;
     }
     #endregion
-
-    public void Save()
-    {
-        PlayerPrefs.SetFloat("CurrentHealth", health);
-    }
 }

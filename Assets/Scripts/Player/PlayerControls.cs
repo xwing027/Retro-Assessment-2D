@@ -7,10 +7,12 @@ public class PlayerControls : MonoBehaviour
     public float speed;
     public GameObject bullet;
     public static bool playing;
+    HolyWater hWater;
 
     private void Awake()
     {
         Screen.SetResolution(Screen.height, Screen.height, true);
+        hWater = GetComponent<HolyWater>();
     }
 
     void Update()
@@ -32,11 +34,16 @@ public class PlayerControls : MonoBehaviour
             //move by what we determined above w/ movement
             transform.Translate(movement);
 
-            //can shoot
-            if (Input.GetButtonDown("Fire1"))
+            if (hWater.waterStore> 0)
             {
-                Instantiate(bullet, transform.position, transform.rotation);
+                //can shoot
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    Instantiate(bullet, transform.position, transform.rotation);
+                    hWater.waterStore--;
+                }
             }
+            
 
             //can get killed by enemy
 

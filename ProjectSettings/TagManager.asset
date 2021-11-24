@@ -9,6 +9,7 @@ TagManager:
   - Ghost2
   - PlayerInvun
   - Powerup1
+  - Water Bonus
   layers:
   - Default
   - TransparentFX

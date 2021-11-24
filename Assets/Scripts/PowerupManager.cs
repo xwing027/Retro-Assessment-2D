@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerupManager : MonoBehaviour
 {
     public GameObject bullet;
+    public GameObject puDisplay;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,6 +18,7 @@ public class PowerupManager : MonoBehaviour
 
     IEnumerator Powerup1()
     {
+        puDisplay.SetActive(true);
         Instantiate(bullet, transform.position, Quaternion.Euler(0f, 0f, 0f)); //spawn bullets at even angles 
         Instantiate(bullet, transform.position, Quaternion.Euler(0f, 0f, 45f));
         Instantiate(bullet, transform.position, Quaternion.Euler(0f, 0f, 90f));
@@ -37,5 +39,6 @@ public class PowerupManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         StartCoroutine("Powerup1");
         StopCoroutine("Powerup1"); //stop after 7 times
+        puDisplay.SetActive(false);
     }
 }

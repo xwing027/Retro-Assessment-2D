@@ -9,7 +9,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject pause;
     public GameObject instructions;
     public GameObject bg;
-    public Health healthScript;
+    public HolyWater waterScript;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class ButtonManager : MonoBehaviour
         PlayerControls.playing = false;
         instructions.SetActive(true);
         bg.SetActive(true);
-        healthScript = GameObject.Find("Health Manager").GetComponent<Health>();
+        waterScript = GameObject.Find("Player").GetComponent<HolyWater>();
     }
 
     public void StartGame()
@@ -56,7 +56,7 @@ public class ButtonManager : MonoBehaviour
     public void Continue()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        healthScript.Save();
+        waterScript.Save();
     }
 
     public void Retry()
