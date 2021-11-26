@@ -23,6 +23,7 @@ public class ButtonManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        PlayerPrefs.DeleteAll();
     }
 
     public void Exit()
@@ -62,6 +63,7 @@ public class ButtonManager : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.DeleteAll();
     }
 
     public void Instructions()

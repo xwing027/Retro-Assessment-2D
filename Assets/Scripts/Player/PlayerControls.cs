@@ -34,7 +34,7 @@ public class PlayerControls : MonoBehaviour
             //move by what we determined above w/ movement
             transform.Translate(movement);
 
-            if (hWater.waterStore> 0)
+            if (hWater.waterStore>= 0)
             {
                 //can shoot
                 if (Input.GetButtonDown("Fire1"))
@@ -50,7 +50,7 @@ public class PlayerControls : MonoBehaviour
             //clamp players position to inside the play field
             Vector2 clampPos = transform.position;
             clampPos.x = Mathf.Clamp(clampPos.x, -4.4f, 4.4f);
-            clampPos.y = Mathf.Clamp(clampPos.y, -6f, 100f);
+            clampPos.y = Mathf.Clamp(clampPos.y, -6f, 140f);
 
             transform.position = clampPos;
         }

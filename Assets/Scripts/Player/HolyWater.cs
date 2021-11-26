@@ -8,7 +8,7 @@ public class HolyWater : MonoBehaviour
 {
     public Image waterBar;
     public float waterStore;
-    public float waterBonus = 5;
+    public float waterBonus = 7;
     public float maxWater = 15;
 
     private void Awake()

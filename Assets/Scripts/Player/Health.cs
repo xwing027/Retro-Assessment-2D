@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     public Image healthBar;
     public float health;
-    public float maxHealth = 5;
+    public float maxHealth = 7;
     public bool isInvun;
     public GameObject player;
     public SpriteRenderer playerSprite;

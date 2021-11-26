@@ -9,7 +9,7 @@ public class FearBehaviour : MonoBehaviour
     public Image fearBar;
     float fear;
     float fearMax=5;
-    public bool isScared = false;
+    public static bool isScared = false;
     int ghostsToKill;
 
     PlayerControls playerCon;
@@ -50,6 +50,10 @@ public class FearBehaviour : MonoBehaviour
         isScared = true;
         playerCon.speed = 0;
         pressF.enabled = true;
+        if (Input.GetButtonDown("Fire1"))
+        {
+            return;
+        }
         //temp kill player if touched regardless of health 
     }
 
